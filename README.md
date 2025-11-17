@@ -1,2 +1,2 @@
-# analisy_sort
+# analysis_sort
 Analisar algoritmos de ordeção
