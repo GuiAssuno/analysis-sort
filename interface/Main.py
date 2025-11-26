@@ -12,7 +12,7 @@ flag_lista_gerada = False
 try:
     caminho_abs_arquivo = pathlib.Path(__file__).resolve()
     pasta = caminho_abs_arquivo.parent.parent
-    pasta / 'library' / 'libc.so'
+    pasta = pasta / 'library' / 'libc.so'
     lib = ctypes.CDLL(pasta)
 except OSError as e:
     print(f"Erro ao carregar a biblioteca C: {e}")
