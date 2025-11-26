@@ -5,15 +5,18 @@ import pandas as pd
 import pathlib
 import time
 
-# --- 1. Carregar a biblioteca C ---
+#--- Carregar a biblioteca C ---
 try:
-    lib = ctypes.CDLL('/home/lola/VScode/C/Estrutura_de_Dados/trabalho_ed/library/libc.so')
+    #LIB_PATH = os.path.join(os.path.dirname(__file__), "libquicksort.so")
+    caminho_abs_arquivo = pathlib.Path(__file__).resolve()
+    pasta = caminho_abs_arquivo.parent.parent
+    pasta = pasta / 'library' / 'libc.so'
+    lib = ctypes.CDLL(pasta)
 except OSError as e:
     print(f"Erro ao carregar a biblioteca C: {e}")
-    print("Você compilou o quick_sort.c para libc.so?")
     exit()
 
-# --- 2. Definir a função ---
+# ---  Definir a função ---
 lib.inicia_quick_sort.restype = ctypes.c_double  # O retorno é um double
 lib.inicia_quick_sort.argtypes = [
     ctypes.POINTER(ctypes.c_int), # ponteiro para o vetor de int
@@ -21,7 +24,7 @@ lib.inicia_quick_sort.argtypes = [
     ctypes.c_int                  # int op
 ]
 
-# --- 3. Função "wrapper" do Python ---
+# ---  Função "wrapper" do Python ---
 def executar_c(tamanho, op_metodo, usar_fixo=False):
     
     if usar_fixo:
@@ -52,7 +55,7 @@ def executar_c(tamanho, op_metodo, usar_fixo=False):
 
 
 
-# --- Gerenciamento de Estado (para guardar os dados do gráfico) ---
+# --- Gerenciamento de Estado ---
 if 'resultados' not in slit.session_state:
     slit.session_state.resultados = pd.DataFrame(columns=['Tamanho (milhares)', 'Tempo (ms)', 'Metodo'])
 
