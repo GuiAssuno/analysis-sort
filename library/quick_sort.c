@@ -146,7 +146,7 @@ int lomuto_mediana_treis(int vetor[], int esquerda, int direita) {
     return (i + 1);
 }
 
-int lomuto_elemento_aleatorio(int vetor[], int esquerda, int direita) {
+int lomuto_aleatorio(int vetor[], int esquerda, int direita) {
     
     int pivo = pivot_aleatorio(vetor, esquerda, direita);
     int i = (esquerda - 1);
@@ -240,7 +240,7 @@ int hoare_mediana_treis(int vetor[], int esquerda, int direita) {
     return (i + 1);
 }
 
-int hoare_elemento_aleatorio(int vetor[], int esquerda, int direita) {
+int hoare_aleatorio(int vetor[], int esquerda, int direita) {
     
     int r = esquerda + (rand() % (direita - esquerda + 1));
 
@@ -355,7 +355,7 @@ int via_mediana_treis(int vetor[], int esquerda, int direita) {
     return (i + 1);
 }
 
-int via_elemento_aleatorio(int vetor[], int esquerda, int direita) {
+int via_aleatorio(int vetor[], int esquerda, int direita) {
     
     int r = esquerda + (rand() % (direita - esquerda + 1));
 
@@ -431,7 +431,7 @@ double inicia_quick_sort(int vetor[], int n, int op) {
             metodo_escolhido = &lomuto_mediana_treis;
             break;
         case 14:
-            metodo_escolhido = &lomuto_elemento_aleatorio;
+            metodo_escolhido = &lomuto_aleatorio;
             break;
         case 15:
             metodo_escolhido = &lomuto_mediana;
