@@ -1,0 +1,6 @@
+#ifndef SORTING_H
+#define SORTING_H
+
+#define INSERTION_SORT_THRESHOLD 16
+
+#endif // SORTING_H
