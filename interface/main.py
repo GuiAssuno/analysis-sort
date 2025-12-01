@@ -10,7 +10,7 @@ if 'tela_inicial' not in slit.session_state:
 if slit.session_state.tela_inicial:
     slit.title("Análise de Algoritmos")
     # Mostra a tela inicial apenas se não tiver escolhido uma opção
-    option = slit.selectbox("Selecione o Módulo", ["1", "2"], index=0)
+    option = slit.selectbox("Selecione o Módulo", ["Analise de Algoritmos de Ordenação", "2"], index=0)
 
     if slit.button("Iniciar Análise"):
         slit.session_state.tela_inicial = False
