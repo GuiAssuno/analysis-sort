@@ -6,7 +6,6 @@
 
 | Algoritmo | Variações Implementadas | Estabilidade | Adaptabilidade | Localidade de Cache |
 | :--- | :--- | :---: | :---: | :---: |
-
 | **Quick Sort** | • Lomuto (1 Pivô)<br>• Hoare (1 Pivô)<br>• 3-Vias (Dutch Flag)<br>• Dual-Pivot (Yaroslavskiy) | ❌ | ❌ | ⭐⭐⭐ |
 
 ---
