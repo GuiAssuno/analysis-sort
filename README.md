@@ -7,13 +7,16 @@
 * **Estabilidade**: Se existem dois elementos com o mesmo valor, eles mantêm a ordem original relativa após a ordenação?
     * **Sim**: Estável.
     * **Não**: Instável.
+      
 * **Adaptabilidade**: O algoritmo consegue tirar vantagem se o vetor já estiver parcialmente ordenado (rodando mais rápido)?
     * **Sim**: Torna-se $O(n)$ ou próximo disso.
     * **Não**: Roda sempre no mesmo tempo $O(n^2)$ ou $O(n \log n)$.
+      
 * **Localidade de Cache**: O algoritmo acessa a memória de forma sequencial (amigável à CPU) ou faz saltos aleatórios (lento)?
     * **Excelente**: Acesso linear contínuo.
     * **Boa**: Acesso linear na maior parte, com alguns saltos.
     * **Ruim**: Muitos saltos de memória ou uso excessivo de ponteiros/listas auxiliares.
+      
   
 | Algoritmo | Variações Implementadas | Estabilidade | Adaptabilidade | Localidade de Cache |
 | :--- | :--- | :---: | :---: | :---: |
