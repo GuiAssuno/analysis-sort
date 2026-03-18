@@ -87,7 +87,7 @@ double inicia_quick_sort(int vetor[], int n, int op)
     else 
         if (op > 40 && op < 50) 
         {
-        // Como Dual Pivot é robusto, geralmente não varia o método de pivô 
+        // Dual Pivot geralmente não varia o método de pivô 
     
         inicio = clock();// inicia a contagem de clock de execução
         
@@ -379,8 +379,8 @@ static void via_ultimo_elemento(int vetor[], int esquerda, int direita, int *i_o
 
     inverte(&vetor[esquerda], &vetor[direita]);
     int pivo = vetor[direita]; // Pivô na esquerda
-    int lt = esquerda;          // Less Than (menores)
-    int gt = direita;           // Greater Than (maiores)
+    int lt = esquerda;          // Less Than = menor que
+    int gt = direita;           // Greater Than = maior que
     int i = esquerda + 1;       // Scan
 
     while (i <= gt) {
@@ -407,8 +407,8 @@ static void via_ultimo_elemento(int vetor[], int esquerda, int direita, int *i_o
 static void via_primeiro_elemento(int vetor[], int esquerda, int direita, int *i_out, int *j_out) {
 
     int pivo = vetor[esquerda]; // Pivô na esquerda
-    int lt = esquerda;          // Less Than (menores)
-    int gt = direita;           // Greater Than (maiores)
+    int lt = esquerda;          // Less Than = menores que
+    int gt = direita;           // Greater Than = maiores que
     int i = esquerda + 1;       // Scan
 
     while (i <= gt) {
@@ -420,14 +420,13 @@ static void via_primeiro_elemento(int vetor[], int esquerda, int direita, int *i
         } else if (vetor[i] > pivo) {
             inverte(&vetor[i], &vetor[gt]);
             gt--;
-            // Não incrementa i, pois o que veio de gt é desconhecido
         } else {
             // Se for igual
             i++;
         }
     }
     
-    // Atualiza os ponteiros para a função chamadora saber onde cortar
+    // Atualiza ponteiros para saber onde cortar
     *i_out = lt; 
     *j_out = gt;
 }
@@ -437,8 +436,8 @@ static void via_mediana_treis(int vetor[], int esquerda, int direita, int *i_out
     inverte (&vetor[esquerda], pivot_mediana_3(vetor, esquerda, direita));
 
     int pivo = vetor[esquerda]; // Pivô na esquerda
-    int lt = esquerda;          // Less Than (menores)
-    int gt = direita;           // Greater Than (maiores)
+    int lt = esquerda;          // Less Than = menor que
+    int gt = direita;           // Greater Than = maior que
     int i = esquerda + 1;       // Scan
 
     while (i <= gt) {//g_comparisons++;
@@ -449,7 +448,7 @@ static void via_mediana_treis(int vetor[], int esquerda, int direita, int *i_out
         } else if (vetor[i] > pivo) {
             inverte(&vetor[i], &vetor[gt]);
             gt--;
-            // Não incrementa i, pois o que veio de gt é desconhecido
+
         } else {
             // Se for igual
             i++;
@@ -466,8 +465,8 @@ static void via_aleatorio(int vetor[], int esquerda, int direita, int *i_out, in
     inverte (&vetor[esquerda], &vetor[esquerda + (rand() % (direita - esquerda + 1))]);
 
     int pivo = vetor[esquerda]; // Pivô na esquerda
-    int lt = esquerda;          // Less Than (menores)
-    int gt = direita;           // Greater Than (maiores)
+    int lt = esquerda;          // Less Than maior que
+    int gt = direita;           // Greater Than menor que
     int i = esquerda + 1;       // Scan
 
     while (i <= gt) {//g_comparisons++;
@@ -495,8 +494,8 @@ static void via_mediana(int vetor[], int esquerda, int direita, int *i_out, int 
     inverte (&vetor[esquerda], &vetor[((esquerda + direita) / 2)]);
 
     int pivo = vetor[esquerda]; // Pivô na esquerda
-    int lt = esquerda;          // Less Than (menores)
-    int gt = direita;           // Greater Than (maiores)
+    int lt = esquerda;          // Less Than menor que 
+    int gt = direita;           // Greater Than maior que 
     int i = esquerda + 1;       // Scan
 
     while (i <= gt) {//g_comparisons++;
