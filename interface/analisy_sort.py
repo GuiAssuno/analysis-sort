@@ -4,7 +4,7 @@ from func import Gerenciador
 import dicionarios as dic
 
 def run():
-    # --- para guardar os dados do gráfico ---
+    # para guardar os dados do gráfico 
     if 'resultados' not in slit.session_state:
         slit.session_state.resultados = pd.DataFrame(columns=['Algoritmo','Metodo','Array','Tamanho', 'Tempo (ms)'])
 
