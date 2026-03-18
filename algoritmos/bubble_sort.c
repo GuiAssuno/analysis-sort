@@ -9,7 +9,7 @@ static void swap(int* a, int* b)
     //g_swaps++;
 }
     
-// 1. Padrão
+// Padrão
 static void bubble_standard(int vetor[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
@@ -19,7 +19,7 @@ static void bubble_standard(int vetor[], int n) {
     }
 }
 
-// 2. Otimizado
+// otimizado
 static void bubble_optimized(int vetor[], int n) {
     bool swapped;
     for (int i = 0; i < n - 1; i++) {
@@ -34,7 +34,7 @@ static void bubble_optimized(int vetor[], int n) {
     }
 }
 
-// 3. Cocktail Shaker (Vai e Volta)
+// Cocktail 
 static void bubble_cocktail(int vetor[], int n) {
     bool swapped = true;
     int start = 0;
@@ -42,7 +42,7 @@ static void bubble_cocktail(int vetor[], int n) {
 
     while (swapped) {
         swapped = false;
-        // Ida (Esquerda -> Direita)
+        // vai
         for (int i = start; i < end; ++i) {
             if (vetor[i] > vetor[i + 1]) {
                 swap(&vetor[i], &vetor[i + 1]);
@@ -53,7 +53,7 @@ static void bubble_cocktail(int vetor[], int n) {
         swapped = false;
         end--;
 
-        // Volta (Direita -> Esquerda)
+        // volta
         for (int i = end - 1; i >= start; --i) {
             if (vetor[i] > vetor[i + 1]) {
                 swap(&vetor[i], &vetor[i + 1]);
@@ -70,10 +70,6 @@ double inicia_bubble_sort(int vetor[], int n, int op) {
     //reset_metrics();
 
     void (*bubble)(int[], int) = NULL;
-    
-    // Mapeamento Python: standard->1, optimized->2, cocktail->3 (supondo ordem)
-    // Ajuste conforme os valores que você enviará do Python ("standard", "optimized", "cocktail")
-    // Sugiro usar strings ou garantir a ordem dos IDs. Aqui assumo IDs numéricos.
     
     if (op == 1)            // Padrão
     {   
